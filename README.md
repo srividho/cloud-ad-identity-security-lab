@@ -63,9 +63,9 @@ The project simulates a small enterprise Windows environment hosted in Microsoft
                     |
                     v
              Incident Log (CSV)
+```
 
-
-Azure Environment
+## Azure Environment
 
 Component	Configuration
 Cloud	Microsoft Azure
@@ -85,7 +85,7 @@ Event Forwarding	Windows Event Forwarding
 Detection Language	PowerShell
 
 
-Active Directory & Identity
+## Active Directory & Identity
 
 The lab domain is:
 
@@ -123,7 +123,7 @@ The GG-IT-Admins group is granted local Administrator access on CLIENT01 through
 
 This demonstrates centralized privilege management instead of manually configuring administrator access on the workstation.
 
-Security Controls
+## Security Controls
 Windows Advanced Security Auditing
 
 Advanced Audit Policy is configured through Group Policy to capture security-relevant activity.
@@ -137,7 +137,7 @@ Event ID	Activity
 4688	Process creation
 4689	Process termination
 
-PowerShell Logging
+### PowerShell Logging
 
 PowerShell logging is centrally configured through Group Policy.
 
@@ -159,7 +159,7 @@ Transcripts were stored under:
 
 C:\ProgramData\PowerShellTranscripts
 
-Windows Event Forwarding
+## Windows Event Forwarding
 
 CLIENT01 forwards security events to DC01 using Windows Event Forwarding.
 
@@ -170,7 +170,7 @@ CLIENT01
     | 4625 / 4672 / 4688 / 4689
     |
     v
-Windows Event Forwarding
+## Windows Event Forwarding
     |
     v
 DC01
@@ -190,7 +190,7 @@ Subscription:
 
 CLIENT01-Security-Monitoring
 
-Detection Engineering
+## Detection Engineering
 
 Three custom PowerShell detection scripts were developed.
 
@@ -257,7 +257,7 @@ HIGH
 
 This demonstrates basic correlation-based detection rather than treating every authentication failure as an isolated event.
 
-Incident Logging
+## Incident Logging
 
 Detected security events are written to a structured CSV incident log.
 
@@ -295,7 +295,7 @@ Severity Assignment
       v
 Incident Log
 
-Attack Simulation
+## Attack Simulation
 
 The lab was tested by intentionally generating failed authentication attempts against a controlled test account.
 
@@ -323,21 +323,21 @@ Central Incident Log
 
 The detection successfully correlated four failed authentication attempts with an account lockout occurring within the configured five-minute window.
 
-Evidence & Screenshots
+## Evidence & Screenshots
 
 The following screenshots document the implementation and validation of the lab.
 
-Azure Infrastructure
+### Azure Infrastructure
 
-Active Directory & Identity
+### Active Directory & Identity
 
-Access Control & Security Policies
+### Access Control & Security Policies
 
-Centralized Monitoring
+### Centralized Monitoring
 
-Detection & Incident Response
+### Detection & Incident Response
 
-Validation Results
+## Validation Results
 
 Final validation confirmed:
 
@@ -359,7 +359,7 @@ Account-lockout detection operational
 Credential-attack correlation operational
 Central incident logging operational
 
-Key Security Concepts Demonstrated
+## Key Security Concepts Demonstrated
 Active Directory security
 Identity and Access Management (IAM)
 Role-Based Access Control (RBAC)
@@ -367,7 +367,7 @@ Least-privilege administration
 Group Policy
 Windows security auditing
 PowerShell logging
-Windows Event Forwarding
+## Windows Event Forwarding
 Centralized security event collection
 Detection engineering
 Event correlation
@@ -376,7 +376,7 @@ Account lockout analysis
 Incident logging
 Basic SOC-style triage
 
-Lessons Learned
+## Lessons Learned
 
 One practical issue encountered during the project involved filtered queries against the Windows Server 2025 ForwardedEvents log.
 
@@ -386,7 +386,7 @@ The detection scripts therefore retrieve events from ForwardedEvents and perform
 
 This became an important implementation lesson: security monitoring scripts should account for platform-specific logging behavior instead of assuming every Event Log query method behaves identically.
 
-Project Structure
+## Project Structure
 Cloud-AD-Infrastructure-Identity-Security-Lab/
 │
 ├── README.md
@@ -411,7 +411,7 @@ Cloud-AD-Infrastructure-Identity-Security-Lab/
     ├── WEF evidence
     └── Detection and validation evidence
 
-Documentation
+## Documentation
 
 Additional technical documentation is available in:
 
@@ -421,7 +421,7 @@ architecture/ARCHITECTURE.mmd
 
 Detection scripts are available in the detection/ directory.
 
-Disclaimer
+## Disclaimer
 
 This project was created as a controlled cybersecurity lab environment for educational and portfolio purposes.
 
