@@ -2,7 +2,7 @@
 
 Hands-on cybersecurity lab built in **Microsoft Azure** to simulate a small enterprise Windows environment and implement identity security, security monitoring, and detection engineering.
 
-## 🎯 Key Skills Demonstrated
+## Key Skills Demonstrated
 
 - Microsoft Azure infrastructure
 - Active Directory & AD DS
@@ -22,7 +22,7 @@ Hands-on cybersecurity lab built in **Microsoft Azure** to simulate a small ente
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
                     Microsoft Azure
@@ -50,7 +50,7 @@ Hands-on cybersecurity lab built in **Microsoft Azure** to simulate a small ente
 
 ---
 
-## 🔐 Security Implementation
+## Security Implementation
 
 ### Identity & Access Management
 - Active Directory domain and OU structure
@@ -74,7 +74,7 @@ Windows Event Forwarding (WEF) is configured to collect security events from `CL
 
 ---
 
-## 🛡️ Detection Engineering
+## Detection Engineering
 
 Custom PowerShell detections were developed for:
 
@@ -88,7 +88,7 @@ The credential attack detector correlates repeated failed logons with an account
 
 ---
 
-## 🧪 Attack Simulation & Validation
+## Attack Simulation & Validation
 
 The lab was tested using controlled authentication failures and account lockouts.
 
@@ -103,7 +103,7 @@ Validation included:
 
 ---
 
-## 📸 Evidence
+## Evidence
 
 ### Azure Infrastructure
 
@@ -147,7 +147,7 @@ Validation included:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 cloud-ad-identity-security-lab/
@@ -170,7 +170,7 @@ cloud-ad-identity-security-lab/
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 - [Architecture Documentation](./documentation/ARCHITECTURE.md)
 - [Detection Logic](./documentation/DETECTION-LOGIC.md)
@@ -178,7 +178,7 @@ cloud-ad-identity-security-lab/
 
 ---
 
-## 💡 What This Project Demonstrates
+## What This Project Demonstrates
 
 This project combines **cloud infrastructure + identity security + endpoint monitoring + detection engineering** into a single practical security lab.
 
@@ -188,6 +188,6 @@ It demonstrates the ability to:
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This project was created for **educational and portfolio purposes** in an isolated Azure lab environment. Attack simulations were controlled and performed only against systems owned and administered by the project author.
