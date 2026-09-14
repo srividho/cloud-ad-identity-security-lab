@@ -1,0 +1,36 @@
+# Security lab runtime data
+Incidents/
+*.log
+
+# PowerShell transcripts
+PowerShellTranscripts/
+
+# Backup scripts
+*.backup.ps1
+
+# Windows temporary files
+*.tmp
+*.temp
+Thumbs.db
+desktop.ini
+
+# Azure / local environment files
+*.rdp
+
+# Secrets and credentials
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+*password*
+*secret*
+*credential*
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store

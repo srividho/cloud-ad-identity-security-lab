@@ -1,0 +1,32 @@
+flowchart TB
+
+    subgraph AZURE["Microsoft Azure"]
+        
+        subgraph VNET["vnet-ad-security-dk"]
+            
+            subgraph ADNET["snet-ad - 10.10.1.0/24"]
+                DC01["DC01<br/>Windows Server 2025<br/>Active Directory + DNS<br/>WEF Collector"]
+            end
+            
+            subgraph CLIENTNET["snet-client - 10.10.2.0/24"]
+                CLIENT01["CLIENT01<br/>Windows Server 2025<br/>Domain-Joined Endpoint"]
+            end
+            
+        end
+    end
+
+    CLIENT01 -->|"Security Events<br/>4625, 4672, 4688, 4689"| WEF["Windows Event Forwarding"]
+    WEF --> DC01
+
+    DC01 --> FE["ForwardedEvents"]
+    FE --> DET["PowerShell Detection Engine"]
+
+    DET --> D1["Failed Logon<br/>4625<br/>MEDIUM"]
+    DET --> D2["Account Lockout<br/>4740<br/>HIGH"]
+    DET --> D3["Credential Attack<br/>4625 + 4740<br/>HIGH"]
+
+    D1 --> LOG["Central Incident Log<br/>incident-log.csv"]
+    D2 --> LOG
+    D3 --> LOG
+
+    GPO["Group Policy<br/>Security Auditing<br/>PowerShell Logging<br/>Local Admin Control<br/>WEF Configuration"] --> CLIENT01
